@@ -10,4 +10,8 @@ text : "content"
 
 and append to the body
 
-and also we
+so app is also a widget
+
+it will listen to click on plus button and add an widget to body
+that's it. user can write the todo. on any change such
+we can take out one event to write in storage
