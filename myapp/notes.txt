@@ -1,0 +1,13 @@
+so simple todo app
+so todo is like done, a check box, then the text content
+
+we render a widget. i.e give in its constructor
+
+new todo({
+done : false,
+text : "content"
+})
+
+and append to the body
+
+and also we
