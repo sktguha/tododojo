@@ -14,8 +14,14 @@ define([
     return declare([_WidgetBase, _TemplatedMixin], {
         templateString: template,
         _todoList : [],
+        constructor : function(){
+            var returnValue = this.inherited(arguments);
+            this.writeToStorage = _.throttle(this._writeToStorage.bind(this), 100);
+            return returnValue;
+        },
         postCreate : function () {
             // this.addTodo();
+            this._restoreStorage();
         },
         _addTodo: function (newParam = {
             done: false,
@@ -25,7 +31,7 @@ define([
             todo.placeAt(this.todoList);
             this._todoList.push(todo);
             dojo.connect(todo, "onSaveRequired", function(){
-                this._writeToStorage();
+                this.writeToStorage();
             }.bind(this));
         },
         addTodo : function () {
