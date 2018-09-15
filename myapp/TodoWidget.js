@@ -15,16 +15,16 @@ define([
         templateString: template,
         postCreate : function () {
             this.checkbox.checked = !!this.done;
-            this.textContent.innerText = (this.text || "");
+            this.textContent.value = (this.text || "");
         },
         toStorageString : function () {
             return {
                 done : this.checkbox.checked,
-                text : this.textContent.innerText
+                text : this.textContent.value
             }
         },
         onSaveRequired : function () {
-            
+
         }
     });
 });
