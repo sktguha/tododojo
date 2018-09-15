@@ -16,6 +16,15 @@ define([
         postCreate : function () {
             this.checkbox.checked = !!this.done;
             this.textContent.innerText = (this.text || "");
+        },
+        toStorageString : function () {
+            return {
+                done : this.checkbox.checked,
+                text : this.textContent.innerText
+            }
+        },
+        onSaveRequired : function () {
+            
         }
     });
 });

@@ -18,11 +18,12 @@
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"
         data-dojo-config="async: true"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore.js"></script>
 <script>
     require([
-        "myapp/app"
-    ], function (app) {
-        new app().placeAt(document.body);
+        "myapp/mainWidget"
+    ], function (mainWidget) {
+        new mainWidget().placeAt(document.body);
     })
 </script>
 </body>
